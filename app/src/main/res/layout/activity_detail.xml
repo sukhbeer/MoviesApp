@@ -9,6 +9,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/background_image"
         android:id="@+id/iv_background"/>
 
     <ScrollView
@@ -28,10 +29,10 @@
                 android:background="@android:color/white"/>
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="250dp"
+                android:contentDescription="@string/main_image"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop"
                 android:id="@+id/iv_detail_main_image"
                 android:layout_margin="16dp"/>
 
@@ -43,25 +44,27 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="45sp"
+                android:textSize="50sp"
                 android:layout_marginStart="30sp"
                 android:layout_marginEnd="30sp"
                 android:textColor="@android:color/white"
                 android:layout_gravity="center"
                 android:id="@+id/tv_movie_title_detail"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/bowlby_one_sc_regular"/>
+                android:fontFamily="@font/product_sans_bold"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
+                    android:contentDescription="@string/released_on_image"
                     android:layout_height="30dp"
-                    android:src="@drawable/clock"/>
+                    android:src="@drawable/ic_clock"/>
 
                 <TextView
                     android:layout_height="wrap_content"
@@ -69,8 +72,7 @@
                     android:textColor="@android:color/white"
                     android:id="@+id/tv_date_released_detail"
                     android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:hint="Date Released"/>
+                    android:layout_width="wrap_content"/>
 
             </LinearLayout>
 
@@ -84,6 +86,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:contentDescription="@string/rating_image"
                     android:src="@drawable/ic_star"/>
 
                 <TextView
@@ -92,8 +95,7 @@
                     android:textColor="@android:color/white"
                     android:id="@+id/tv_rating_detail"
                     android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:hint="7.3"/>
+                    android:layout_width="wrap_content"/>
 
             </LinearLayout>
 
@@ -105,17 +107,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="30dp"
-                android:text="OVERVIEW"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="30dp"
-                android:id="@+id/tv_overview_detail"
-                android:layout_marginStart="30dp"
-                android:hint="Overview"/>
+                android:text="@string/overview"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -125,24 +117,37 @@
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="30dp"
-                android:text="TRAILERS"/>
+                android:text="@string/trailers"/>
 
-            <!--<LinearLayout-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginStart="30dp"-->
-                <!--android:layout_marginEnd="30dp"-->
-                <!--android:id="@+id/linear_layout_detail"-->
-                <!--android:orientation="vertical">-->
-            <!--</LinearLayout>-->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
 
+                <android.support.v4.view.ViewPager
+                    android:layout_height="200dp"
+                    android:padding="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="match_parent"
+                    android:clipToPadding="false"
+                    android:id="@+id/view_pager"/>
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="8dp" />
+                <ProgressBar
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:id="@+id/pb_trailers"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="30dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_no_trailers_available"
+                    android:text="@string/no_trailers_available"/>
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -152,38 +157,65 @@
                 android:textColor="@android:color/white"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="30dp"
-                android:text="REVIEWS"/>
+                android:text="@string/reviews"/>
 
-
-            <android.support.v7.widget.RecyclerView
-                android:layout_height="wrap_content"
+            <FrameLayout
+                android:layout_width="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="70dp"
-                android:layout_width="match_parent"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:id="@+id/rv_reviews"/>
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/rv_reviews"/>
+
+                <ProgressBar
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/pb_reviews"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/tv_no_reviews_available"
+                    android:text="@string/no_reviews_available"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_overview_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:hint="@string/overview"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_share_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/fab_share_detail"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="bottom|start"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/share" />
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_share"/>
 
     <android.support.design.widget.FloatingActionButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom|end"
-    android:id="@+id/fab_fav_detail"
-    android:layout_marginEnd="50dp"
-    android:layout_marginBottom="50dp"
-    android:src="@drawable/ic_unfav"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:id="@+id/fab_fav_detail"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_unfav"/>
 
 </FrameLayout>

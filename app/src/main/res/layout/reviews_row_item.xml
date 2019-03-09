@@ -9,6 +9,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:contentDescription="@string/initial_letter_image"
         android:id="@+id/iv_initial_letter_reviews_item"/>
 
     <LinearLayout
@@ -28,6 +29,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
             android:id="@+id/tv_reviewer_review_item"
             android:textColor="@android:color/white"
             android:layout_height="wrap_content"/>

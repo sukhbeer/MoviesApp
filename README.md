@@ -1,4 +1,4 @@
-# PopularMovies2
+# PopularMovies
 The 3rd Project of Udacity's Nanodegree program
 Stage 2 of the previously developed Popular Movies
 

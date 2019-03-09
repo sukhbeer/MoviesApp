@@ -15,12 +15,14 @@
         <ImageView
             android:id="@+id/iv_trailer_thumb_item"
             android:layout_width="match_parent"
+            android:contentDescription="@string/trailer_thumbnail"
             android:layout_height="match_parent"
             android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:contentDescription="@string/play_icon"
             android:layout_gravity="center"
             android:src="@drawable/ic_play_circle" />
     </FrameLayout>

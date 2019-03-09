@@ -3,11 +3,11 @@
 
     <item
         android:id="@+id/nav_popular_movies"
-        android:icon="@drawable/clapperboard"
+        android:icon="@drawable/ic_popular_movies"
         android:title="@string/popular_movies" />
     <item
         android:id="@+id/nav_top_rated"
-        android:icon="@drawable/filmreel"
+        android:icon="@drawable/ic_top_rated"
         android:title="@string/top_rated" />
 
     <item
